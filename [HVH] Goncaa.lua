@@ -27,12 +27,6 @@ local increase_speed_mode = ui.new_checkbox("AA", "Other","Dangerous double tap"
 local limit = ui.reference( "AA", "Fake lag", "Limit" )
 
 
-
-
-
--- [x]===================[ Menu additions & References  ]===================[x] 
-
-
 local new_check_box, new_multiselect, new_slider = ui.new_checkbox, ui.new_multiselect, ui.new_slider
 local ui_get, ui_set, ui_ref = ui.get, ui.set, ui.reference
 local ui_reference = ui.reference
@@ -59,15 +53,12 @@ local freestanddrop = ui_reference("AA", "Anti-aimbot angles", "Freestanding")
 client.exec("clear")
 client.exec("exec gonc")
 local noticetheaa = ui.new_label("AA", "Anti-aimbot angles", " ")
-
-
 local maintain = ui.new_combobox( "AA", "Anti-aimbot angles", "LBY Movement", { "Off", "Fake twist", "Fake jitter"} )
 local limit = ui.reference( "AA", "Fake lag", "Limit" )
-
-
-
 local updates = 0
 local targeted = 0
+
+
 client.set_event_callback( "setup_command", function( cmd )	
 	if cmd.chokedcommands == 0 then
 		updates = updates + 1
@@ -113,7 +104,6 @@ local function set()
     if ui_get(ui_desynctype) == "Off" then
       return
     end
-
 
     if ui_get(ui_desynctype) == "Gonc Jitter" then
 	   ui_set(reference_yaw, "180")
