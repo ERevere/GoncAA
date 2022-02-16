@@ -92,19 +92,6 @@ client.set_event_callback( "setup_command", function( cmd )
 	end
 end )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 local legit_e_key = ui.new_checkbox("AA", "Anti-aimbot angles", "Legit AA on E")
 client.set_event_callback("setup_command",function(e)
     local weaponn = entity.get_player_weapon()
@@ -120,9 +107,7 @@ client.set_event_callback("setup_command",function(e)
             end
         end
 end
-end)
-
--- [x]===================[ Multiselect options  ]===================[x] 
+end) 
 
 local function set()
     if ui_get(ui_desynctype) == "Off" then
@@ -202,11 +187,7 @@ local function set()
         ui.set_visible(freestand, false)
     end
 end
--- [x]==============================================================[x] 
 
-
-
--- [x]===================[ Hide shit if Goncaa isn't on, not sure how to make this better  ]===================[x] 
 local function handle_menu()
 if ui.get(ui_enabledd) then
 ui.set_visible(maintain, true)
@@ -257,24 +238,12 @@ end
 handle_menu()
 ui.set_callback(ui_enabledd, handle_menu)
 ui.set_callback(ui_desynctype, set, on_paint)
--- [x]=========================================================================================================[x] 
 
-
-
-
-
-
-
-
-
--- [x]===================[ Dangerous dt  ]===================[x]
 local double_tap, double_tap_key = ui.reference("RAGE", "Other", "Double tap")
 local double_tap_mode = ui.reference("RAGE", "Other", "Double tap mode")
 local double_tap_fake_lag_limit = ui.reference("RAGE", "Other", "Double tap fake lag limit")
 local fake_lag = ui.reference("AA", "Fake lag", "Limit")
 local sv_maxusrcmdprocessticks = ui.reference("MISC", "Settings", "sv_maxusrcmdprocessticks")
-
-
 
 ui.set_visible(sv_maxusrcmdprocessticks, true)
 local function do_shit()
@@ -293,8 +262,6 @@ end
 ui.set_callback(increase_speed_mode, do_shit)
 ui.set_callback(fake_lag, do_shit)
 
--- [x]=======================================================[x]
-
 -- Reference vanilla ones
 local slowmo = ui.reference("AA", "Other", "Slow Motion")
 local slowmot = ui.reference("AA", "Other", "Slow motion type")
@@ -304,7 +271,6 @@ local slowmohk = ui.reference("AA", "Other", "Slow Motion", "Enabled")
 local chkbox_slowwalk = ui_new_checkbox("AA", "Other", "Slow walk")
 local hotkey_slowwalk = ui_new_hotkey("AA", "Other", "Slow walk hotkey")
 local slider_slowwalk = ui_new_slider("AA", "Other", "Slow walk speed", 1, 100, 100, true, "%") --ui.new_slider(tab, container, name, min, max, init_value, show_tooltip, unit, scale, tooltips)
-
 
 local function setSpeed(newSpeed)
 	if client_get_cvar("cl_sidespeed") == 450 and newSpeed == 450 then
